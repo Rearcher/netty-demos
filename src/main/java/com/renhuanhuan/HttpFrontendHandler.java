@@ -38,7 +38,7 @@ public class HttpFrontendHandler extends SimpleChannelInboundHandler<FullHttpReq
         }
 
         Bootstrap b = new Bootstrap();
-        b.group(inboundChannel.eventLoop())
+        b.group(inboundChannel.eventLoop())     // use inboundChannel thread
                 .channel(ctx.channel().getClass())
                 .handler(new BackendHandlerInitializer(inboundChannel));
 
