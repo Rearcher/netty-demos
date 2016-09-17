@@ -1,4 +1,4 @@
-package com.renhuanhuan;
+package com.renhuanhuan.proxy;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;

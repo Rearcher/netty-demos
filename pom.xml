@@ -31,7 +31,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation = "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.renhuanhuan.HttpProxyServer</mainClass>
+                                    <mainClass>com.renhuanhuan.proxy.HttpProxyServer</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

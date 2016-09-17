@@ -1,4 +1,4 @@
-package com.renhuanhuan;
+package com.renhuanhuan.proxy;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;

@@ -1,4 +1,4 @@
-package com.renhuanhuan;
+package com.renhuanhuan.proxy;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.EventLoopGroup;

@@ -1,4 +1,4 @@
-package com.renhuanhuan;
+package com.renhuanhuan.proxy;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
