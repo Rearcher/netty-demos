@@ -33,8 +33,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
         }
 
         final String uri = msg.uri();
-        final String path = uri;
-//        final String path = sanitizeUri(uri);
+        final String path = sanitizeUri(uri);
 
         if (path == null) {
             sendError(ctx, HttpResponseStatus.FORBIDDEN);
@@ -61,7 +60,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
             return;
         }
 
-        RandomAccessFile randomAccessFile = null;
+        RandomAccessFile randomAccessFile;
         try {
             randomAccessFile = new RandomAccessFile(file, "r");
         } catch (FileNotFoundException e) {
@@ -124,9 +123,9 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
             }
         }
 
-        if (!uri.startsWith(url)) {
-            return null;
-        }
+//        if (!uri.startsWith(url)) {
+//            return null;
+//        }
 
         if (!uri.startsWith("/")) {
             return null;
@@ -138,7 +137,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
             return null;
         }
 
-        return System.getProperty("user.dir") + File.separator + uri;
+        return uri;
     }
 
     private void sendListing(ChannelHandlerContext ctx, File dir) {
@@ -164,9 +163,9 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
                 continue;
             }
             String name = f.getName();
-            if (!ALLOWED_FILE_NAME.matcher(name).matches()) {
-                continue;
-            }
+//            if (!ALLOWED_FILE_NAME.matcher(name).matches()) {
+//                continue;
+//            }
             buf.append("<li> <a href=\"");
             buf.append(name);
             buf.append("\">");
